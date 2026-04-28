@@ -1,0 +1,39 @@
+/* TripList.css - Responsive Styles */
+
+@media (max-width: 768px) {
+  .trip-card {
+    padding: 1rem;
+  }
+
+  .trip-card h3 {
+    font-size: 1rem;
+  }
+
+  .trip-card p {
+    font-size: 0.875rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .button-group button {
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) {
+  .trip-card {
+    padding: 1.5rem;
+  }
+
+  .button-group {
+    flex-direction: row;
+    width: auto;
+  }
+
+  .button-group button {
+    width: auto;
+  }
+}

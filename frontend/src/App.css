@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+/* Custom animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out;
+}
+
+.animate-fade-in-left {
+  animation: fade-in-left 0.5s ease-out both;
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+/* Smooth transitions for all interactive elements */
+button, a, input, textarea, select {
+  transition: all 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Loading spinner enhancement */
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Log Sheet Container */
+.log-sheet-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+  .log-sheet-container svg {
+    min-width: 700px;
+  }
+}
+
+/* Mobile-first responsive adjustments */
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .responsive-stack {
+    flex-direction: column !important;
+  }
+
+  .map-container {
+    height: 300px !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .map-container {
+    height: 400px !important;
+  }
+}
+
+/* Ensure touch-friendly buttons on mobile */
+@media (max-width: 768px) {
+  button, .button {
+    min-height: 44px;
+    font-size: 16px;
+  }
+
+  input, select, textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
